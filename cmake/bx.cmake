@@ -36,7 +36,7 @@ if( WIN32 )
 endif()
 
 # Add include directory of bx
-target_include_directories( bx PUBLIC ${BX_DIR}/include ${BX_DIR}/3rdparty )
+target_include_directories( bx PUBLIC $<BUILD_INTERFACE:${BX_DIR}/include> $<BUILD_INTERFACE:${BX_DIR}/3rdparty> )
 
 # Build system specific configurations
 if( MSVC )

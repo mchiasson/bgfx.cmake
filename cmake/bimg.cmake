@@ -31,7 +31,7 @@ file( GLOB BIMG_SOURCES ${BIMG_DIR}/src/*.cpp )
 add_library( bimg STATIC ${BIMG_SOURCES} )
 
 # Add include directory of bimg
-target_include_directories( bimg PUBLIC ${BIMG_DIR}/include )
+target_include_directories( bimg PUBLIC $<BUILD_INTERFACE:${BIMG_DIR}/include> )
 
 # bimg dependencies
 target_link_libraries( bimg bx astc edtaa3 etc1 etc2 iqa squish nvtt pvrtc )
